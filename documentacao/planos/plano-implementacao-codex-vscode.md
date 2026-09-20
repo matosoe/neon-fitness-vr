@@ -313,10 +313,10 @@ execute novamente os testes e só então avalie o gate.
 
 - [x] `F1-06` 👤/🤖 Habilitar o build profile Meta Quest (ou Android se a versão não o oferecer). — Android habilitado como fallback.
 - [x] `F1-07` 👤/🤖 Instalar XR Plug-in Management e Unity OpenXR Plugin; habilitar OpenXR no desktop e no Meta Quest/Android.
-- [ ] `F1-08` 👤/🤖 Instalar Meta XR Core SDK e Meta XR Interaction SDK pelas fontes oficiais/UPM; não instalar Platform, Voice, Avatars ou MRUK.
-- [ ] `F1-09` 👤/🤖 Configurar features OpenXR exigidas pelas versões instaladas e rodar `XR Plug-in Management > Project Validation`.
-- [ ] `F1-10` 👤/🤖 Rodar `Meta > Tools > Project Setup Tool`; aplicar correções individualmente e registrar qualquer mudança relevante.
-- [ ] `F1-11` 🤖 Registrar versões exatas no README; nunca escrever código contra APIs apenas lembradas de outra versão.
+- [x] `F1-08` 👤/🤖 Instalar Meta XR Core SDK e Meta XR Interaction SDK pelas fontes oficiais/UPM; não instalar Platform, Voice, Avatars ou MRUK.
+- [x] `F1-09` 👤/🤖 Configurar features OpenXR exigidas pelas versões instaladas e rodar `XR Plug-in Management > Project Validation`.
+- [x] `F1-10` 👤/🤖 Rodar `Meta > Tools > Project Setup Tool`; aplicar correções individualmente e registrar qualquer mudança relevante.
+- [x] `F1-11` 🤖 Registrar versões exatas no README; nunca escrever código contra APIs apenas lembradas de outra versão.
 
 #### F1.3 — Rig e mãos
 
@@ -550,6 +550,15 @@ Registrar aqui apenas itens ativos. Remover da lista quando resolvidos e preserv
 - Validação: execução batch do Unity encerrou com código `0`, gerou os assets XR, atualizou o lockfile e compilou scripts sem erros.
 - Decisão: Meta XR Core SDK e Meta XR Interaction SDK continuam pendentes porque sua distribuição oficial via Asset Store exige que o titular adicione os pacotes à conta Unity; não foram instalados pacotes Platform, Voice, Avatars ou MRUK.
 - Próximo passo: adicionar Meta XR Core SDK e Meta XR Interaction SDK na página “My Assets” da conta Unity para concluir `F1-08`.
+
+### 2026-09-20 — F1-08 a F1-11 — Codex
+
+- Resultado: concluído.
+- Pacotes: Meta XR Core SDK `205.0.0` e Meta XR Interaction SDK `205.0.0`, obtidos pela Asset Store; `Meta XR Interaction SDK Essentials` foi instalado como dependência. Não há pacotes Meta Platform, Voice, Avatars ou MRUK no manifesto.
+- OpenXR Android: habilitados Meta Quest Support, Foveated Rendering e Subsampled Layout. A validação OpenXR não retornou erros bloqueantes; os avisos de perfis de controle/mãos e otimizações opcionais foram adiados para as etapas específicas de interação e desempenho.
+- Project Setup Tool: aplicadas individualmente as correções para Android API mínima `32`, target API `34`, entrada única `GameActivity` e Subsampled Layout. Configuração de DUC/App ID foi deixada fora de escopo porque o projeto não utiliza APIs da Meta Platform.
+- Validação: o Unity em batch encerrou com código `0` após aplicar e conferir as configurações; as versões exatas foram registradas no README.
+- Próximo passo: criar a cena `NeonFitnessMVP` (`F1-12`).
 
 ## 13. Fontes oficiais consultadas
 

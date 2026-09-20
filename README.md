@@ -12,7 +12,10 @@ O projeto-base foi criado com Unity `6000.3.24f1` e URP `17.3.0`. Pareamento do 
 - XR Plug-in Management: `4.5.3`.
 - Unity OpenXR Plugin: `1.16.1`.
 - OpenXR está atribuído para Standalone e Android.
-- Meta XR Core SDK e Meta XR Interaction SDK ainda não foram instalados; serão obtidos pela conta Unity/Asset Store antes de configurar os recursos específicos da Meta.
+- Meta XR Core SDK: `205.0.0`.
+- Meta XR Interaction SDK: `205.0.0` (com `Meta XR Interaction SDK Essentials` como dependência).
+- Recursos OpenXR para Android: Meta Quest Support, Foveated Rendering e Subsampled Layout habilitados.
+- Não foram instalados Meta Platform, Voice, Avatars ou MR Utility Kit (MRUK).
 
 ## Pré-requisitos
 

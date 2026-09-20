@@ -311,8 +311,8 @@ execute novamente os testes e só então avalie o gate.
 
 #### F1.2 — XR e pacotes
 
-- [ ] `F1-06` 👤/🤖 Habilitar o build profile Meta Quest (ou Android se a versão não o oferecer).
-- [ ] `F1-07` 👤/🤖 Instalar XR Plug-in Management e Unity OpenXR Plugin; habilitar OpenXR no desktop e no Meta Quest/Android.
+- [x] `F1-06` 👤/🤖 Habilitar o build profile Meta Quest (ou Android se a versão não o oferecer). — Android habilitado como fallback.
+- [x] `F1-07` 👤/🤖 Instalar XR Plug-in Management e Unity OpenXR Plugin; habilitar OpenXR no desktop e no Meta Quest/Android.
 - [ ] `F1-08` 👤/🤖 Instalar Meta XR Core SDK e Meta XR Interaction SDK pelas fontes oficiais/UPM; não instalar Platform, Voice, Avatars ou MRUK.
 - [ ] `F1-09` 👤/🤖 Configurar features OpenXR exigidas pelas versões instaladas e rodar `XR Plug-in Management > Project Validation`.
 - [ ] `F1-10` 👤/🤖 Rodar `Meta > Tools > Project Setup Tool`; aplicar correções individualmente e registrar qualquer mudança relevante.
@@ -542,6 +542,14 @@ Registrar aqui apenas itens ativos. Remover da lista quando resolvidos e preserv
 - Resultado: checkpoint Git autorizado pelo titular; fluxo de branches seguirá Gitflow com `master`, `develop` e `feature/*`.
 - Privacidade: a autoria local será configurada com e-mail `noreply` do GitHub antes do primeiro push; commits automatizados incluem o trailer `Assisted-by: Codex (OpenAI)`.
 - Próximo passo: sincronizar a feature de bootstrap, integrá-la em `develop` e iniciar `F1-06` somente após revisão de compatibilidade dos pacotes XR.
+
+### 2026-09-20 — F1-06 e F1-07 — Codex
+
+- Resultado: concluído.
+- Configuração: build target Android ativo; XR Plug-in Management `4.5.3` e Unity OpenXR Plugin `1.16.1`; loader OpenXR atribuído para Standalone e Android.
+- Validação: execução batch do Unity encerrou com código `0`, gerou os assets XR, atualizou o lockfile e compilou scripts sem erros.
+- Decisão: Meta XR Core SDK e Meta XR Interaction SDK continuam pendentes porque sua distribuição oficial via Asset Store exige que o titular adicione os pacotes à conta Unity; não foram instalados pacotes Platform, Voice, Avatars ou MRUK.
+- Próximo passo: adicionar Meta XR Core SDK e Meta XR Interaction SDK na página “My Assets” da conta Unity para concluir `F1-08`.
 
 ## 13. Fontes oficiais consultadas
 

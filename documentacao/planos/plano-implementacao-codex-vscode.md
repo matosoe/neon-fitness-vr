@@ -155,15 +155,15 @@ Estas são as decisões propostas. Qualquer alteração deve ser registrada em `
 - [x] Git LFS.
 - [x] Visual Studio Code.
 - [x] Extensão oficial **Codex** (`openai.chatgpt`) no VS Code.
-- [ ] 👤 Unity Hub.
-- [ ] 👤 Unity 6.3 LTS — patch estável validado na etapa de compatibilidade.
-- [ ] 👤 Módulos do Editor instalados pelo Unity Hub:
-  - Android Build Support;
-  - Android SDK & NDK Tools;
-  - OpenJDK.
-- [ ] 👤 Extensão **Unity** da Microsoft no VS Code; ela instala as dependências C#/C# Dev Kit necessárias.
-- [ ] 👤 Meta Quest Developer Hub (MQDH).
-- [ ] 👤 Driver USB da Meta/Oculus para ADB no Windows.
+- [x] 👤 Unity Hub 3.21.3.
+- [x] 👤 Unity 6.3 LTS — `6000.3.24f1`, patch LTS mais recente listado pelo Unity CLI em 2026-09-19 e compatível com os requisitos atuais publicados pela Meta.
+- [x] 👤 Módulos do Editor instalados pelo Unity CLI:
+  - [x] Android Build Support;
+  - [x] Android SDK & NDK Tools;
+  - [x] OpenJDK.
+- [x] 👤 Extensão **Unity** da Microsoft no VS Code (`visualstudiotoolsforunity.vstuc@1.3.1`), com C# Dev Kit e C# instalados.
+- [x] 👤 Meta Quest Developer Hub (MQDH) `6.4.1`.
+- [x] 👤 Driver USB da Meta/Oculus para ADB no Windows (`12.0.0.0`, pacote `oem110.inf`).
 - [ ] 👤 Cabo USB-C com dados, não apenas carga.
 - [ ] 🥽 Meta Quest 3 atualizado e pareado.
 
@@ -202,17 +202,17 @@ Também verificar:
 
 ### P0.1 — Baseline do Git
 
-- [ ] 🤖 Preservar a especificação original sem reescrevê-la.
-- [ ] 🤖 Adicionar `.gitignore` oficial/adequado a Unity, incluindo no mínimo `Library/`, `Temp/`, `Logs/`, `obj/`, `Build/`, `Builds/`, `.vs/` e caches locais.
-- [ ] 🤖 Executar `git lfs install`.
-- [ ] 🤖 Criar `.gitattributes` e rastrear em LFS apenas binários grandes que realmente entrarem no projeto, por exemplo `*.psd`, `*.blend`, `*.fbx`, `*.wav`, `*.mp3`, `*.mp4`; não colocar cenas, prefabs, `.meta` ou scripts no LFS.
-- [ ] 🤖 Configurar no Unity `Asset Serialization = Force Text` e `Version Control = Visible Meta Files`.
+- [x] 🤖 Preservar a especificação original sem reescrevê-la.
+- [x] 🤖 Adicionar `.gitignore` oficial/adequado a Unity, incluindo no mínimo `Library/`, `Temp/`, `Logs/`, `obj/`, `Build/`, `Builds/`, `.vs/` e caches locais.
+- [x] 🤖 Executar `git lfs install`.
+- [x] 🤖 Criar `.gitattributes` e rastrear em LFS apenas binários grandes que realmente entrarem no projeto, por exemplo `*.psd`, `*.blend`, `*.fbx`, `*.wav`, `*.mp3`, `*.mp4`; não colocar cenas, prefabs, `.meta` ou scripts no LFS.
+- [x] 🤖 Configurar no Unity `Asset Serialization = Force Text` e `Version Control = Visible Meta Files`.
 - [ ] 👤 Criar o primeiro commit/checkpoint depois de revisar os arquivos.
 - [ ] Critério de saída: `git status` limpo e clone/reabertura preservam todos os assets e respectivos `.meta`.
 
 ### P0.2 — Instruções para o Codex
 
-- [ ] 🤖 Criar `AGENTS.md` na raiz com:
+- [x] 🤖 Criar `AGENTS.md` na raiz com:
   - comandos de validação disponíveis;
   - versão fixa do Unity e stack XR;
   - regra de nunca editar `Library/`, `Temp/`, `Logs/`, builds ou `PackageCache`;
@@ -221,8 +221,8 @@ Também verificar:
   - requisito de não avançar por gates de hardware sem confirmação humana;
   - requisito de um único agente escritor para cenas/prefabs/configurações Unity;
   - seção `## Code Review Rules` com riscos de XR, desempenho, conforto e dupla pontuação.
-- [ ] 🤖 Criar `.codex/config.toml` apenas se for necessário ajustar agentes por projeto; manter configuração mínima.
-- [ ] 🤖 Opcionalmente criar agentes customizados em `.codex/agents/`:
+- [x] 🤖 Criar `.codex/config.toml` apenas se for necessário ajustar agentes por projeto; dispensado nesta etapa por não haver ajuste necessário.
+- [x] 🤖 Opcionalmente criar agentes customizados em `.codex/agents/`; dispensados nesta etapa para manter a configuração mínima:
   - `unity_explorer.toml`: somente leitura, mapeia pacotes/cenas/APIs;
   - `gameplay_worker.toml`: implementa uma tarefa C# bem delimitada;
   - `xr_reviewer.toml`: revisa XR, conforto, performance e compatibilidade;
@@ -232,11 +232,11 @@ Também verificar:
 
 ### P0.3 — Estrutura de acompanhamento
 
-- [ ] 🤖 Criar `documentacao/decisoes/` e template curto de ADR.
-- [ ] 🤖 Criar `documentacao/testes/checklist-headset.md`.
-- [ ] 🤖 Criar `documentacao/testes/matriz-rastreabilidade.md`, ligando requisitos do MVP a teste/evidência.
-- [ ] 🤖 Criar `README.md` inicial com estado, pré-requisitos e link para este plano.
-- [ ] Critério de saída: toda tarefa futura tem local para evidência e toda decisão de stack é rastreável.
+- [x] 🤖 Criar `documentacao/decisoes/` e template curto de ADR.
+- [x] 🤖 Criar `documentacao/testes/checklist-headset.md`.
+- [x] 🤖 Criar `documentacao/testes/matriz-rastreabilidade.md`, ligando requisitos do MVP a teste/evidência.
+- [x] 🤖 Criar `README.md` inicial com estado, pré-requisitos e link para este plano.
+- [x] Critério de saída: toda tarefa futura tem local para evidência e toda decisão de stack é rastreável.
 
 ## 7. Modelo de execução por agentes no Codex/VS Code
 
@@ -289,11 +289,11 @@ execute novamente os testes e só então avalie o gate.
 **Resultado:** ambiente reproduzível, Quest conectado e repositório pronto.
 
 - [ ] `F0-01` 👤 Concluir contas OpenAI, Unity e Meta descritas na seção 4. ⛔ — acesso ao Codex confirmado; aguardando validação humana do Unity ID/licença e da conta/organização Meta.
-- [ ] `F0-02` 👤 Instalar ferramentas obrigatórias da seção 5.
-- [ ] `F0-03` 👤/🥽 Parear o Quest, ativar Developer Mode e aceitar `Always allow from this computer` para depuração USB.
-- [ ] `F0-04` 👤/🤖 Validar `adb devices` e resolver conflito de múltiplos `adb` se houver.
+- [x] `F0-02` 👤 Instalar ferramentas obrigatórias da seção 5; software concluído e validado, restando cabo/headset para `F0-03`.
+- [x] `F0-03` 👤/🥽 Parear o Quest, ativar Developer Mode e aceitar `Always allow from this computer` para depuração USB.
+- [x] `F0-04` 👤/🤖 Validar `adb devices` e resolver conflito de múltiplos `adb` se houver.
 - [ ] `F0-05` 🤖 Executar P0.1, P0.2 e P0.3.
-- [ ] `F0-06` 👤 Criar checkpoint Git revisado.
+- [x] `F0-06` 👤 Criar checkpoint Git revisado e sincronizado com GitHub, autorizado pelo titular.
 - [ ] **GATE F0:** ferramentas verificadas, organização Meta válida, Quest `device/Active`, Git limpo e instruções carregadas pelo Codex.
 
 ### Fase 1 — Projeto Unity e fundação XR
@@ -303,11 +303,11 @@ execute novamente os testes e só então avalie o gate.
 
 #### F1.1 — Criação controlada
 
-- [ ] `F1-01` 👤 Criar o projeto **dentro deste repositório**, sem criar uma segunda pasta Git, usando `Universal 3D`/URP e a versão validada do Editor.
-- [ ] `F1-02` 🤖 Inspecionar o resultado antes de alterar: `ProjectVersion.txt`, `manifest.json`, `packages-lock.json`, render pipeline e build profile.
-- [ ] `F1-03` 🤖 Garantir estrutura `Assets/_Project/` conforme a especificação, adaptando somente se o template já trouxer convenção válida.
-- [ ] `F1-04` 🤖 Confirmar serialização textual, Visible Meta Files, `.gitignore` e LFS.
-- [ ] `F1-05` 👤/🤖 Fixar nome da empresa/produto provisórios e package ID de desenvolvimento, por exemplo `com.<organizacao>.neonfitnessvr`; documentar antes de eventual publicação.
+- [x] `F1-01` 👤 Criar o projeto **dentro deste repositório**, sem criar uma segunda pasta Git, usando `Universal 3D`/URP e a versão validada do Editor.
+- [x] `F1-02` 🤖 Inspecionar o resultado antes de alterar: `ProjectVersion.txt`, `manifest.json`, `packages-lock.json`, render pipeline e build profile.
+- [x] `F1-03` 🤖 Garantir estrutura `Assets/_Project/` conforme a especificação, adaptando somente se o template já trouxer convenção válida.
+- [x] `F1-04` 🤖 Confirmar serialização textual, Visible Meta Files, `.gitignore` e LFS.
+- [x] `F1-05` 👤/🤖 Fixar nome da empresa/produto provisórios e package ID de desenvolvimento, por exemplo `com.<organizacao>.neonfitnessvr`; documentar antes de eventual publicação.
 
 #### F1.2 — XR e pacotes
 
@@ -481,7 +481,7 @@ Uma tarefa só pode ser marcada `[x]` quando:
 
 Registrar aqui apenas itens ativos. Remover da lista quando resolvidos e preservar a decisão no diário/ADR.
 
-- [ ] Confirmar se Unity Hub/Editor e MQDH já existem em caminhos não padrão antes de instalar.
+- [ ] Confirmar se MQDH já existe em caminho não padrão antes de instalar; Unity Hub/Editor já foram localizados e validados.
 - [ ] `F0-01`: validar Unity ID/organização/licença no Unity Hub e conta/organização Meta no Developer Dashboard; essas etapas exigem login, aceite de termos e eventual verificação de identidade pelo titular.
 - [ ] Confirmar elegibilidade/licença Unity escolhida pelo titular da conta.
 - [ ] Confirmar criação/verificação da organização Meta e Developer Mode.
@@ -509,6 +509,39 @@ Registrar aqui apenas itens ativos. Remover da lista quando resolvidos e preserv
 - Evidência: extensão instalada, sessão autenticada e acesso de leitura ao workspace confirmados; nenhuma credencial foi lida ou registrada.
 - Decisões: nenhuma.
 - Próximo passo: o titular deve confirmar Unity ID/organização/licença ativa e conta/organização Meta verificada; depois, concluir `F0-01` e seguir para `F0-02`.
+
+### 2026-09-19 — F0-02 — Codex
+
+- Resultado: concluído para todo o software obrigatório; cabo e headset serão validados em `F0-03`.
+- Arquivos alterados: `documentacao/planos/plano-implementacao-codex-vscode.md`.
+- Instalação: Unity Hub `3.21.3`; Unity CLI `1.0.0-beta.8`; Editor Unity `6000.3.24f1`; Android Build Support; SDK/NDK Tools; OpenJDK; extensão Unity do VS Code `1.3.1`; MQDH `6.4.1`; driver Oculus ADB `12.0.0.0`.
+- Validação: `unity editors verify 6000.3.24f1` retornou `ok` para o Editor e todos os módulos; `adb version` retornou `1.0.41`/platform-tools `36.0.0`; Java retornou Temurin `17.0.18+8`; NDK retornou `27.2.12479018`; `code --list-extensions --show-versions` confirmou Unity/C#/C# Dev Kit; registro de aplicativos e assinatura Authenticode confirmaram MQDH `6.4.1` assinado pela Meta; `pnputil /enum-drivers` confirmou `android_winusb.inf` assinado pela Oculus.
+- Evidência: inventário do Unity CLI lista `6000.3.24f1` com `Android Build Support`, `Android SDK & NDK Tools` e `OpenJDK`; licença Unity Personal ativa. O usuário aceitou explicitamente os termos do Android SDK antes da instalação. MQDH e driver foram baixados de `securecdn.oculus.com` a partir dos metadados oficiais da Meta e suas assinaturas digitais foram verificadas antes da instalação.
+- Observação: também existe Unity `6000.6.2f1` com Documentation e Web Build Support; não será usado neste projeto e foi preservado.
+- Próximo passo: concluir `F0-01` confirmando a situação da conta/organização Meta e executar `F0-03` conectando o Quest com cabo de dados, Developer Mode e autorização USB.
+
+### 2026-09-19 — P0.1–P0.3 e F1-01–F1-05 — Codex
+
+- Resultado: projeto-base iniciado; tarefas locais de preparação concluídas, exceto o checkpoint Git e a confirmação do `AGENTS.md` em uma nova conversa.
+- Arquivos criados: projeto Unity (`Assets/`, `Packages/`, `ProjectSettings/`), `.gitignore`, `.gitattributes`, `AGENTS.md`, `README.md`, ADRs e documentação de testes.
+- Stack resolvida: Unity `6000.3.24f1`, template `3D URP`, URP `17.3.0`, Input System `1.20.0` e Unity Test Framework `1.6.0`.
+- Configuração: `Force Text`, `Visible Meta Files`, namespace `NeonFitnessVR`, empresa/produto `Neon Fitness VR` e package ID Android provisório `com.neonfitnessvr.prototype`.
+- Validação: abertura batch encerrou com código `0`, compilação de scripts retornou `ExitCode: 0` e o Unity CLI reconheceu o projeto, a versão do Editor, Android/IL2CPP e os pacotes resolvidos.
+- Decisão: por solicitação do usuário, o projeto local avançou apesar de `F0-03`/`F0-04` ainda dependerem do headset; nenhuma etapa XR ou gate de hardware foi marcada como concluída.
+- Próximo passo: revisar e criar `F0-06` (checkpoint Git); depois conectar o Quest para `F0-03`/`F0-04` antes de configurar XR e gerar APK.
+
+### 2026-09-19 — F0-03 e F0-04 — Codex
+
+- Resultado: concluído.
+- Validação: ADB identificou o headset `Quest 3` como `device`, com Android `14`; Developer Mode e autorização USB estão efetivos.
+- Observação: há um segundo dispositivo em estado `unauthorized` e um emulador Android conectados. Comandos destinados ao Quest devem usar explicitamente o serial do headset para evitar o alvo incorreto.
+- Próximo passo: criar o checkpoint Git `F0-06` antes de configurar os pacotes XR (`F1-06` em diante).
+
+### 2026-09-19 — F0-06 — Codex
+
+- Resultado: checkpoint Git autorizado pelo titular; fluxo de branches seguirá Gitflow com `master`, `develop` e `feature/*`.
+- Privacidade: a autoria local será configurada com e-mail `noreply` do GitHub antes do primeiro push; commits automatizados incluem o trailer `Assisted-by: Codex (OpenAI)`.
+- Próximo passo: sincronizar a feature de bootstrap, integrá-la em `develop` e iniciar `F1-06` somente após revisão de compatibilidade dos pacotes XR.
 
 ## 13. Fontes oficiais consultadas
 

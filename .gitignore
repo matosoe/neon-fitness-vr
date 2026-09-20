@@ -1,0 +1,46 @@
+# Unity generated folders
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Builds
+/[Bb]uild/
+/[Bb]uilds/
+
+# IDE and generated solution files
+/.vs/
+/.idea/
+/.vscode/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity-generated crash and test artifacts
+sysinfo.txt
+crashlytics-build.properties
+/[Tt]est[Rr]esults/
+
+# Asset Store tools are local-only
+/[Aa]ssets/AssetStoreTools*
+
+# Local project staging used during bootstrap
+/.unity-project-staging/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
